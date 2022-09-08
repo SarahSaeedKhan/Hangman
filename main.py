@@ -13,7 +13,7 @@ class Player_table(db.Model):
     no_of_tries = db.Column(db.Integer)
 
 
-@app.route('/Guess_word', methods=['POST'])
+@app.route('/guess_word', methods=['POST'])
 def player():
     word = Player_table(word=request.form['word'], no_of_tries=request.form['no_of_tries'],
                         player=request.form['player'])
@@ -53,7 +53,7 @@ def play():
                 wrong_guess += 1
 
         if wrong_guess == 0:
-            print('congo, you won')
+            print('Congratulations, you won')
             break
 
     else:
